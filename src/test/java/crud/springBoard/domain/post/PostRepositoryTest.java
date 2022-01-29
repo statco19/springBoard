@@ -21,10 +21,11 @@ class PostRepositoryTest {
     @Test
     void save() {
         Post post = new Post("my title", "my article");
-        postRepository.save(post);
+        String timeSaved = postRepository.save(post);
         Post savedPost = postRepository.findById(post.getId());
 
         assertThat(savedPost).isEqualTo(post);
+        assertThat(savedPost.getTimeStamp()).isEqualTo(timeSaved);
     }
 
     @Test

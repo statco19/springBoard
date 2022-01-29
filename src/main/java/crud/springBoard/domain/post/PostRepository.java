@@ -2,6 +2,8 @@ package crud.springBoard.domain.post;
 
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 @Repository
@@ -10,11 +12,15 @@ public class PostRepository {
     private static final Map<Long, Post> repo = new HashMap<>();
     private static Long sequence = 0L;
 
-    public Post save(Post post) {
+    public String save(Post post) {
         post.setId(++sequence);
-        repo.put(post.getId(), post);
 
-        return post;
+        DateTimeFormatter dtf4 = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
+        String timeSaved = dtf4.format(LocalDateTime.now());
+        post.setTimeStamp(timeSaved);
+
+        repo.put(post.getId(), post);
+        return timeSaved;
     }
 
     public Post findById(Long id) {
