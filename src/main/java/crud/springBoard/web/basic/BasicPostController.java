@@ -43,7 +43,25 @@ public class BasicPostController {
     public String uploadPost(@ModelAttribute Post post, RedirectAttributes redirectAttributes) {
         postRepository.save(post);
         redirectAttributes.addAttribute("postId", post.getId());
-        redirectAttributes.addAttribute("status", true);
+        redirectAttributes.addAttribute("uploaded", true);
+        return "redirect:/basic/posts/{postId}";
+    }
+
+    @GetMapping("/{postId}/edit-post")
+    public String edit(@PathVariable Long postId, Model model) {
+        Post post = postRepository.findById(postId);
+        model.addAttribute("post", post);
+
+        return "basic/editPost";
+    }
+
+    @PostMapping("/{postId}/edit-post")
+    public String editPost(@PathVariable Long postId,
+                           @ModelAttribute Post updatedPost,
+                           RedirectAttributes redirectAttributes) {
+        postRepository.update(postId, updatedPost);
+        redirectAttributes.addAttribute("updated", true);
+
         return "redirect:/basic/posts/{postId}";
     }
 
