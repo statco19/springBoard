@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link th:href="@{/css/bootstrap.min.css}"
+            href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container" style="max-width: 600px">
+    <div class="py-5 text-center">
+        <h2>Posts</h2> </div>
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-primary float-end" onclick="location.href='uploadPost.html'" type="button">Upload</button>
+        </div>
+    </div>
+    <hr class="my-4">
+    <div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th> <th>Title</th> <th>Created at</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="post: ${posts}">
+                <td><a th:text="${post.id}" th:href="@{basic/posts/{postId} (postId=${post.id})}"
+                       href="post.html">1</a></td>
+                <td><a th:text="${post.title}" th:href="@{|basic/posts/${post.id}|}"
+                       href="post.html">Title 1</a></td>
+                <td th:text="${post.timeStamp}">20/09/22 15:07</td>
+            </tr>
+<!--            <tr>-->
+<!--                <td><a href="post.html">1</a></td>-->
+<!--                <td><a href="post.html">Title 1</a></td>-->
+<!--                <td>20/09/22 15:07</td>-->
+<!--            </tr>-->
+<!--            <tr>-->
+<!--                <td><a href="post.html">2</a></td>-->
+<!--                <td><a href="post.html">Title 2</a></td>-->
+<!--                <td>21/01/22 12:07</td>-->
+<!--            </tr>-->
+            </tbody>
+        </table>
+    </div>
+</div> <!-- /container -->
+</body>
+</html>
