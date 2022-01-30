@@ -5,9 +5,8 @@ import crud.springBoard.domain.post.PostRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
@@ -36,8 +35,16 @@ public class BasicPostController {
     }
 
     @GetMapping("/upload-post")
-    public String uploadPost() {
+    public String upload() {
         return "basic/uploadPost";
+    }
+
+    @PostMapping("/upload-post")
+    public String uploadPost(@ModelAttribute Post post, RedirectAttributes redirectAttributes) {
+        postRepository.save(post);
+        redirectAttributes.addAttribute("postId", post.getId());
+        redirectAttributes.addAttribute("status", true);
+        return "redirect:/basic/posts/{postId}";
     }
 
     @PostConstruct
