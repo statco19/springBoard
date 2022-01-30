@@ -21,11 +21,25 @@ dependencies {
 }
 
 ## Post list
-![Screen Shot 2022-01-29 at 11 28 06 PM](https://user-images.githubusercontent.com/71916314/151664730-00a7a424-b0ee-47aa-9b29-f5cd08ceb0ae.png)
+![Screen Shot 2022-01-30 at 10 19 24 PM](https://user-images.githubusercontent.com/71916314/151701506-a2a3d5bc-d386-496b-8533-c42c7c20ebb1.png)
+
+## Upload posts
+![Screen Shot 2022-01-30 at 10 19 34 PM](https://user-images.githubusercontent.com/71916314/151701524-451aab7c-dcd9-43c6-ab33-021288f731e1.png)
+
+## Post details
+![Screen Shot 2022-01-30 at 10 20 04 PM](https://user-images.githubusercontent.com/71916314/151701534-5ccfc407-e4a4-4167-baa7-3a3d203fa34e.png)
+
+## Modify posts
+![Screen Shot 2022-01-30 at 10 20 31 PM](https://user-images.githubusercontent.com/71916314/151701549-f40a5b3e-0a80-4139-b9f1-c41a73e5bbf4.png)
+
+## Post list after uploading/modifying posts
+![Screen Shot 2022-01-30 at 10 20 45 PM](https://user-images.githubusercontent.com/71916314/151701576-f03886be-74b4-4358-8536-67f1b2cb3526.png)
 
 
 ## Functions to be implemented
+- Deletion
 - Sign up/in
 - Replies
+- Modified at
 - Admin pages
 - Uploading photos
