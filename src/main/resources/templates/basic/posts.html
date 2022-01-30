@@ -1,9 +1,10 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html th:replace="layout/base :: base(~{::style}, ~{::body})">
 <head>
-    <meta charset="utf-8">
-    <link th:href="@{/css/bootstrap.min.css}"
-            href="../css/bootstrap.min.css" rel="stylesheet">
+<!--    <meta charset="utf-8">-->
+<!--    <link th:href="@{/css/bootstrap.min.css}"-->
+<!--            href="../css/bootstrap.min.css" rel="stylesheet">-->
+    <style></style>
 </head>
 <body>
 <div class="container" style="max-width: 600px">
@@ -11,7 +12,8 @@
         <h2>Posts</h2> </div>
     <div class="row">
         <div class="col">
-            <button class="btn btn-primary float-end" onclick="location.href='uploadPost.html'" type="button">Upload</button>
+            <button class="btn btn-primary float-end" th:onclick="|location.href='@{/basic/posts/upload-post}'|"
+                    onclick="location.href='uploadPost.html'" type="button">Upload</button>
         </div>
     </div>
     <hr class="my-4">
@@ -30,16 +32,6 @@
                        href="post.html">Title 1</a></td>
                 <td th:text="${post.timeStamp}">20/09/22 15:07</td>
             </tr>
-<!--            <tr>-->
-<!--                <td><a href="post.html">1</a></td>-->
-<!--                <td><a href="post.html">Title 1</a></td>-->
-<!--                <td>20/09/22 15:07</td>-->
-<!--            </tr>-->
-<!--            <tr>-->
-<!--                <td><a href="post.html">2</a></td>-->
-<!--                <td><a href="post.html">Title 2</a></td>-->
-<!--                <td>21/01/22 12:07</td>-->
-<!--            </tr>-->
             </tbody>
         </table>
     </div>

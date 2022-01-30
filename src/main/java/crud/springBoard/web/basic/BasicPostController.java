@@ -12,7 +12,7 @@ import javax.annotation.PostConstruct;
 import java.util.List;
 
 @Controller
-@RequestMapping("basic/posts")
+@RequestMapping("/basic/posts")
 @RequiredArgsConstructor
 public class BasicPostController {
 
@@ -24,6 +24,11 @@ public class BasicPostController {
         model.addAttribute("posts", posts);
 
         return "basic/posts";
+    }
+
+    @GetMapping("/upload-post")
+    public String uploadPost() {
+        return "basic/uploadPost";
     }
 
     @PostConstruct

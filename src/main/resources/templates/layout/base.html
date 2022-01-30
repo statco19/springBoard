@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html th:fragment="base(style, body)" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <link th:href="@{/css/bootstrap.min.css}"
+          href="../css/bootstrap.min.css" rel="stylesheet">
+    <style th:replace="${style}"></style>
+
+</head>
+
+<div th:replace="${body}"></div>
+
+</html>
