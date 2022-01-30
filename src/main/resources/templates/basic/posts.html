@@ -26,9 +26,9 @@
             </thead>
             <tbody>
             <tr th:each="post: ${posts}">
-                <td><a th:text="${post.id}" th:href="@{basic/posts/{postId} (postId=${post.id})}"
+                <td><a th:text="${post.id}" th:href="@{/basic/posts/{postId} (postId=${post.id})}"
                        href="post.html">1</a></td>
-                <td><a th:text="${post.title}" th:href="@{|basic/posts/${post.id}|}"
+                <td><a th:text="${post.title}" th:href="@{|/basic/posts/${post.id}|}"
                        href="post.html">Title 1</a></td>
                 <td th:text="${post.timeStamp}">20/09/22 15:07</td>
             </tr>
